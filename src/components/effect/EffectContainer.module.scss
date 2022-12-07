@@ -1,6 +1,7 @@
 @import '@styles/_variables.scss';
 
 .container {
+  display: block;
   position: relative;
   border: .5px solid $accent;
   border-radius: $radius;

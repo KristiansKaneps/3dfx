@@ -13,10 +13,10 @@ export default function Showcase() {
   return (
     <div className={styles.container}>
       <div className={styles.main}>
-        <EffectContainer title='First'>
+        <EffectContainer title='First' href='/effect/first'>
           <FirstEffect />
         </EffectContainer>
-        <EffectContainer title='Second'>
+        <EffectContainer title='Second' href='/effect/second'>
           <SecondEffect />
         </EffectContainer>
       </div>
