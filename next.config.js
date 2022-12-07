@@ -1,7 +1,36 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const withTM = require('next-transpile-modules')([]);
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(
+  withTM({
+    poweredByHeader: false,
+    reactStrictMode: true,
+    swcMinify: true,
+    output: 'standalone',
+    optimizeFonts: true,
+    experimental: {
+      appDir: true,
+    },
+    webpack: (config) => {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+      };
+      config.module.rules.push({
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      });
+      config.module.rules.push({
+        test: /\.(glsl|vs|fs|vsh|fsh|vert|frag)$/,
+        exclude: /node_modules/,
+        use: ['raw-loader', 'glslify-loader'],
+      });
+      return config;
+    },
+    images: {
+      domains: [],
+    },
+  }),
+);

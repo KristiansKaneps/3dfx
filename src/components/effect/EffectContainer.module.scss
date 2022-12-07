@@ -1,0 +1,26 @@
+@import '@styles/_variables.scss';
+
+.container {
+  position: relative;
+  border: .5px solid $accent;
+  border-radius: $radius;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  padding: .25em 0;
+  font-size: 1.5em;
+  font-weight: 500;
+  user-select: none;
+}
+
+.effectContainer {
+  position: absolute;
+  inset: 0;
+}
