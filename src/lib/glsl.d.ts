@@ -13,6 +13,11 @@ declare module '*.vsh' {
   export default value;
 }
 
+declare module '*.gsh' {
+  const value: string;
+  export default value;
+}
+
 declare module '*.fs' {
   const value: string;
   export default value;
@@ -23,12 +28,22 @@ declare module '*.vs' {
   export default value;
 }
 
+declare module '*.gs' {
+  const value: string;
+  export default value;
+}
+
 declare module '*.frag' {
   const value: string;
   export default value;
 }
 
 declare module '*.vert' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.geom' {
   const value: string;
   export default value;
 }
