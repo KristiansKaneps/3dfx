@@ -7,12 +7,7 @@ module.exports = withBundleAnalyzer(
   withTM({
     poweredByHeader: false,
     reactStrictMode: true,
-    swcMinify: true,
     output: 'standalone',
-    optimizeFonts: true,
-    experimental: {
-      appDir: true,
-    },
     webpack: (config) => {
       config.resolve.alias = {
         ...config.resolve.alias,

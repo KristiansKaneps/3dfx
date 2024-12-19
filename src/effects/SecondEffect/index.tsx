@@ -65,7 +65,7 @@ function Plane({
   const uv = useRef(new Vector2()).current;
   const pos = useRef(new Vector3()).current;
 
-  const lightNormalMapTexture = useRef<Texture>();
+  const lightNormalMapTexture = useRef<Texture>(null);
   useEffect(() => {
     const texture = new THREE.TextureLoader().load(LightNormalMap.src);
     texture.wrapS = THREE.RepeatWrapping;

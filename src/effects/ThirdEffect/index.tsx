@@ -46,14 +46,14 @@ export default function ThirdEffect() {
 
 const createNoise = createNoise3D();
 
-type PlaneProps = ThreeElements['instancedMesh'] & {
+type PlaneProps = Omit<ThreeElements['instancedMesh'], 'args'> & {
   radius?: number;
   gap?: number;
   width?: number;
   height?: number;
   depth?: number;
   scale?: number;
-  cameraRef: React.MutableRefObject<THREE.PerspectiveCamera>;
+  cameraRef: React.RefObject<THREE.PerspectiveCamera>;
 };
 
 function Plane({

@@ -36,7 +36,7 @@ export default function FirstEffect() {
 
 const createNoise = createNoise3D();
 
-type PlaneCloudProps = ThreeElements['instancedMesh'] & {
+type PlaneCloudProps = Omit<ThreeElements['instancedMesh'], 'args'> & {
   radius?: number;
   gap?: number;
   width?: number;
